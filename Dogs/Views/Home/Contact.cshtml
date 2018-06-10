@@ -1,0 +1,119 @@
+﻿@model Dogs.Models.GuestMassage
+
+@{ 
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZIBADOGS</title>
+
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb">
+                <li><a asp-action="Index">Գլխավոր</a></li>
+                <li>Հետադարձ կապ</li>
+            </div>
+        </div>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1524.177228632873!2d44.50506265808454!3d40.178924494848395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abcfee7e80193%3A0xadb5786a85241bc5!2zIkdyaWcgVGlnZXIiINWN1YrUuA!5e0!3m2!1sen!2s!4v1525856178502" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>Թողեք ձեր հաղորդագրությունը</h2>
+                <p>Մի վախեցեք որ ձեր հաղորդագրությունը անտարբեր կմնա</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" method="post" asp-action="Contact">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Անուն *</label>
+                            <input type="text" name="name" class="form-control" required="required" asp-for="Name">
+                        </div>
+                        <div class="form-group">
+                            <label>էլ. հաս *</label>
+                            <input type="email" name="email" class="form-control" required="required" asp-for="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" asp-for="Phone">
+                        </div>
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" asp-for="Id">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" name="subject" class="form-control" required="required" asp-for="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <input id="message" required="required" class="form-control" rows="8" asp-for="Massage"></input>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="social-icon">
+                    <div class="col-md-4">
+                        <ul class="social-network">
+                            <li><a href="https://www.facebook.com/profile.php?id=100006196322624" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/watch?v=C4y_h9xbyDE" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pull-right">
+                <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/js/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/functions.js"></script>
+
+</body>
+</html>
